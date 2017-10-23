@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Meme Genarator</title>
+	<style type="text/css">
+		#meme {
+			width: 300px;
+			height: 400px;
+			background: url("Img/orgin.jpg"); 	
+			margin: auto;
+			padding: 10px;
+			background-repeat: no-repeat;
+		}
+
+		#topText {
+			text-align: center;
+			color: white;
+			font-size: 25px;
+			margin-top: 10px;
+			font-weight: bold;
+		}
+
+		#bottomText {
+			text-align: center;
+			color: white;
+			font-size: 25px;
+			vertical-align: bottom;
+			margin-top: 300px;
+			font-weight: bold;
+		}
+		.textInput{
+			width: 750px;
+			height: 150px;
+			/*background: rebeccapurple;*/
+			margin: 0 auto;
+		}
+		input[type=text]{
+			width: 100%;
+			padding-top: 10px;
+			margin: 8px 0;
+			box-sizing: border-box;
+		}
+		input[type=radio]{
+		margin-right: 20px;
+		margin-top: 10px;
+		}
+		button {
+			background-color: blueviolet;
+			border-radius: 12px;
+			font-size: 16px;
+			border: none;
+			display: inline-block;
+		}
+		.options input {
+			margin: 0;
+			padding: 0;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="meme">
+		<div id="topText">Lorem, ipsum.</div>
+		<div id="bottomText">Lorem, ipsum.</div>
+	</div>
+<div class="textInput">
+<input type="text" id="top" placeholder="Top Text here" onkeyup="topTex()">
+<input type="text" id="bottom" placeholder="Bottom Text Here" onkeyup="down()">
+</div>
+<div class="options">
+<input type="radio" name="pic"  id="pic" onclick="test()"><label for="pic"><img src="Img/meme1.jpg" alt="No working"></label>
+<input type="radio"  name="pic" id="pic1" onclick="test2()"><label for="pic1"><img src="Img/meme2.jpg" alt="not working"></label>
+<input type="radio" name="pic" id="pic2" onclick="test3()"><label for="pic2" ondblclick=""><img src="Img/meme3.jpg" alt="not working"></input></label>
+<input type="radio" name="pic" id="orgin" onclick="test4()"><label for="orgin"><img src="Img/orgin.jpg" alt="Not working"></label>
+</div>
+<button onclick="change()">CHANGE PICTURE</button>
+<script type="text/javascript">
+
+function topTex(){
+	var topT = document.getElementById("top").value;
+	document.getElementById("topText").innerHTML = topT;
+}
+function down(){
+	var downT = document.getElementById("bottom").value;
+	document.getElementById("bottomText").innerHTML = downT;
+}
+
+function change(){
+	if(document.getElementById("pic").checked){
+		//alert("Change to pic 1");
+		document.getElementById("meme").style.background = "url(Img/meme1.jpg)";
+		document.getElementById("meme").style.backgroundRepeat = "no-repeat";
+	}
+	else if (document.getElementById("pic1").checked){
+		//alert("Change to pic 2");
+		document.getElementById("meme").style.background = "url(Img/meme2.jpg)";
+		document.getElementById("meme").style.backgroundRepeat = "no-repeat";
+		;
+	}
+
+	else if(document.getElementById("pic2").checked){
+		//alert("Change to pic 3");
+		document.getElementById("meme").style.background = "url(Img/meme3.jpg)";
+		document.getElementById("meme").style.backgroundRepeat = "no-repeat";
+		//document.getElementById("topText").style.color = "black";
+		//document.getElementById("bottomText").style.color = "black"
+	}
+
+	
+	else if(document.getElementById("orgin").checked){
+		//alert("Orginal Pic");
+		document.getElementById("meme").style.background = "url(Img/orgin.jpg)";
+		document.getElementById("meme").style.backgroundRepeat = "no-repeat";
+	}
+
+}
+
+function test(){
+	document.getElementById("meme").style.background = "url(Img/meme1.jpg)";
+	document.getElementById("meme").style.backgroundRepeat = "no-repeat";
+}
+
+function test2() {
+	document.getElementById("meme").style.background = "url(Img/meme2.jpg)";
+	document.getElementById("meme").style.backgroundRepeat = "no-repeat";
+}
+
+function test3() {
+	document.getElementById("meme").style.background = "url(Img/meme3.jpg)";
+	document.getElementById("meme").style.backgroundRepeat = "no-repeat";
+}
+
+function test4(){
+	document.getElementById("meme").style.background = "url(Img/orgin.jpg)";
+	document.getElementById("meme").style.backgroundRepeat = "no-repeat";
+}
+</script>
+</body>
+</html>
